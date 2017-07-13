@@ -1,5 +1,6 @@
 describe('VideoList', function() {
-  var { createRenderer } = React.addons.TestUtils;
+  var { createRenderer } = React.addons.TestUtils;  // let createRenderer = {React.addons.TestUtils}
+  // react.addons.testutils.createRenderer = {};
 
   // When testing a React component that renders other nested components,
   // it's a common practice to "shallow render" the component, or render
