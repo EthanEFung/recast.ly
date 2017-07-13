@@ -1,8 +1,10 @@
 const VideoListEntry = (props) => { 
-  let onVideoListEntryClick = () => props.click(props.video);
+  let populateVideoPlayer = () => {
+    props.click(props.video);
+  };
 
   return (
-    <div className="video-list-entry" onClick={onVideoListEntryClick}>
+    <div className="video-list-entry" onClick={populateVideoPlayer}>
       <div className="media-left media-middle">
         <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="cats are ok" />
       </div>

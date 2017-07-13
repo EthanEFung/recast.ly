@@ -1,5 +1,3 @@
-console.log('Im fresh');
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +8,6 @@ class App extends React.Component {
   }
 
   onVideoListEntryClick(video) {
-    console.log('I will give you donuts');
     this.setState({
       playerVideo: video 
     });
