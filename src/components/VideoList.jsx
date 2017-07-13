@@ -1,10 +1,10 @@
 const VideoList = (props) => {
-  
   return (
-  <div className="video-list media">
-    {props.videos.map(video => <VideoListEntry video={video}/>)}  
-  </div>
-)}
+    <div className="video-list media">
+      {props.videos.map(video => <VideoListEntry video={video} click={props.click} />)}  
+    </div>
+  );
+};
 
 
 

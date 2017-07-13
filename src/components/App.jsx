@@ -1,25 +1,31 @@
+console.log('Im fresh');
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerVideo: exampleVideoData[0];
-    }
+      playerVideo: exampleVideoData[0]
+    };
 
   }
 
   onVideoListEntryClick(video) {
-     this.setState({ playerVideo : video });
+    console.log('I will give you donuts');
+    this.setState({
+      playerVideo: video 
+    });
   }
 
   render(props) {
+
     return (
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer/>
+          <VideoPlayer video={this.state.playerVideo} />
         </div>
         <div className="col-md-5">
-          <VideoList videos={exampleVideoData} />
+          <VideoList videos={exampleVideoData} click={this.onVideoListEntryClick.bind(this)} />
         </div>
       </div>
     );
