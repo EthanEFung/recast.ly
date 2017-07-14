@@ -2,6 +2,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      videos: exampleVideoData,
       playerVideo: exampleVideoData[0]
     };
 
@@ -12,6 +13,35 @@ class App extends React.Component {
       playerVideo: video 
     });
   }
+
+  componentDidMount() {
+    const options = {
+      query: 'Bacon Pancakes',
+      max: 5,
+      key: window.YOUTUBE_API_KEY
+    };
+
+    this.props.searchYouTube(options, (dataItems) => {
+      this.setState({
+        videos: dataItems,
+        playerVideo: dataItems[0]
+      });
+    });
+  }
+
+  getYouTubeVideos(query) {
+    let options = {
+      key: window.YOUTUBE_API_KEY,
+      query: query
+    };
+    this.props.searchYouTube(options, (dataItems) => {
+      this.setState({
+        videos: dataItems,
+        playerVideo: dataItems[0]
+      });
+    });
+  }
+
 
   render(props) {
 
